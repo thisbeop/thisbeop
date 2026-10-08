@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>FREE ROBUX GENERATOR</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{
+background:linear-gradient(135deg,#00c853,#007bff,#7b1fff);
+background-size:400% 400%;
+animation:bg 12s infinite alternate;
+color:#fff;
+overflow-x:hidden;
+min-height:100vh;
+}
+@keyframes bg{
+0%{background-position:left}
+100%{background-position:right}
+}
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 25px;
+background:#0005;
+backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+z-index:99;
+}
+.logo{font-size:28px;font-weight:bold}
+.online{background:#fff2;padding:10px 15px;border-radius:12px}
+.hero{text-align:center;padding:60px 20px}
+.hero h1{font-size:60px;text-shadow:0 5px 20px #0005}
+.hero p{max-width:700px;margin:auto;margin-top:15px;font-size:18px;opacity:.95}
+.container{
+width:95%;
+max-width:550px;
+margin:auto;
+background:#0004;
+padding:30px;
+border-radius:30px;
+backdrop-filter:blur(12px);
+box-shadow:0 10px 40px #0005;
+}
+input,select,button{
+width:100%;
+padding:15px;
+margin-top:14px;
+border:none;
+border-radius:15px;
+font-size:16px;
+}
+button{
+background:#ffe600;
+font-weight:bold;
+cursor:pointer;
+transition:.2s;
+}
+button:hover{transform:scale(1.03)}
+.hidden{display:none}
+#avatar{
+width:130px;
+height:130px;
+border-radius:25px;
+border:4px solid white;
+margin-top:20px;
+object-fit:cover;
+box-shadow:0 5px 20px #0005;
+}
+.center{text-align:center}
+.progressBox{
+height:20px;
+background:#fff2;
+border-radius:30px;
+overflow:hidden;
+margin-top:15px;
+}
+.progress{
+height:100%;
+width:0%;
+background:linear-gradient(90deg,#00ff6a,#ffe600);
+transition:1s;
+}
+#count{
+font-size:40px;
+margin-top:15px;
+color:#ffe600;
+font-weight:bold;
+}
+.status{margin-top:12px;opacity:.9}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+width:95%;
+max-width:1100px;
+margin:50px auto;
+}
+.card{
+background:#0004;
+padding:25px;
+border-radius:25px;
+backdrop-filter:blur(10px);
+box-shadow:0 5px 20px #0003;
+}
+.feedItem,.chatMsg{
+background:#fff1;
+padding:12px;
+border-radius:12px;
+margin-top:10px;
+animation:fade .4s;
+}
+@keyframes fade{
+from{opacity:0;transform:translateY(10px)}
+to{opacity:1;transform:translateY(0)}
+}
+.popup{
+position:fixed;
+right:20px;
+bottom:20px;
+background:white;
+color:black;
+padding:16px;
+border-radius:18px;
+font-weight:bold;
+display:none;
+box-shadow:0 10px 25px #0004;
+z-index:999;
+}
+.glow{
+animation:glow 1.5s infinite alternate;
+}
+@keyframes glow{
+from{box-shadow:0 0 10px #ffe600}
+to{box-shadow:0 0 30px #ffe600}
+}
+footer{text-align:center;padding:35px;background:#0005;margin-top:50px}
+.badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:15px}
+.badge{background:#fff2;padding:10px 15px;border-radius:999px}
+.liveChat{max-height:300px;overflow:auto}
+.claimed{
+font-size:50px;
+font-weight:bold;
+text-align:center;
+margin-top:20px;
+color:#ffe600;
+}
+.spin{
+animation:spin 4s linear infinite;display:inline-block}
+@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">💎 FREE ROBUX</div>
+<div class="online" id="online">🔥 18,241 users online</div>
+</header>
+
+<section class="hero">
+<h1>Unlimited Robux Generator</h1>
+<p>Generate free Robux instantly using our advanced cloud-based Roblox reward system.</p>
+<div class="badges">
+<div class="badge">✔ Safe</div>
+<div class="badge">⚡ Instant</div>
+<div class="badge">🔒 Secure</div>
+<div class="badge">🚀 Fast</div>
+</div>
+</section>
+
+<div class="container glow">
+<h2 class="center">Generate Robux</h2>
+
+<input id="user" placeholder="Enter Roblox Username" oninput="avatar()">
+
+<div class="center hidden" id="avatarBox">
+<img id="avatar">
+<h3 id="avatarName"></h3>
+</div>
+
+<select id="amount">
+<option>800 Robux</option>
+<option>1700 Robux</option>
+<option>4500 Robux</option>
+<option>10000 Robux</option>
+<option>50000 Robux</option>
+</select>
+
+<button onclick="start()">⚡ Start Generator</button>
+
+<div id="tasks" class="hidden">
+<div class="claimed" id="fakeAmount">0</div>
+<div id="count">30</div>
+<div class="status" id="status">Connecting to Roblox...</div>
+
+<div class="progressBox">
+<div class="progress" id="bar"></div>
+</div>
+
+<button class="hidden" id="redeem" onclick="redeem()">🎁 Redeem Robux</button>
+</div>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h2>📈 Live Generations</h2>
+<div id="feed">
+<div class="feedItem">ShadowKing generated 10000 Robux</div>
+<div class="feedItem">MegaBuilder generated 4500 Robux</div>
+</div>
+</div>
+
+<div class="card">
+<h2>💬 Live Chat</h2>
+<div class="liveChat" id="chat">
+<div class="chatMsg">CoolPlayer: OMG it worked 😂</div>
+<div class="chatMsg">DragonYT: just got 10k robux</div>
+</div>
+
+<input id="chatInput" placeholder="Type a message..." onkeydown="if(event.key==='Enter')sendChat()">
+<button onclick="sendChat()">Send Message</button>
+</div>
+
+<div class="card">
+<h2>🏆 Top Reviews</h2>
+<div class="feedItem">⭐⭐⭐⭐⭐ Best generator ever.</div>
+<div class="feedItem">⭐⭐⭐⭐⭐ I thought this was fake lol.</div>
+<div class="feedItem">⭐⭐⭐⭐⭐ Actually worked instantly.</div>
+</div>
+
+<div class="card">
+<h2>📊 Statistics</h2>
+<div class="feedItem">💎 Robux Generated Today: <b>12,482,992</b></div>
+<div class="feedItem">👥 Successful Users: <b>892,112</b></div>
+<div class="feedItem">⚡ Average Delivery Time: <b>32 seconds</b></div>
+</div>
+
+</div>
+
+<footer>
+This is a prank/demo website and does not generate real Robux.
+</footer>
+
+<div class="popup" id="popup"></div>
+
+<script>
+const $=x=>document.getElementById(x)
+const names=['CoolKid','ShadowKing','DragonYT','MegaBuilder','FastPlayer','PixelHero','NoobMaster','EpicBuilder']
+const amounts=['800','1700','4500','10000','50000']
+const chats=['THIS IS CRAZY','it actually worked','bro i got robux','W generator','omg thanks','this is insane']
+const status=[
+'Connecting to Roblox API...',
+'Encrypting transaction...',
+'Checking account...',
+'Generating Robux package...',
+'Finalizing reward...'
+]
+
+async function avatar(){
+let u=$('user').value
+if(u.length<3)return $('avatarBox').classList.add('hidden')
+try{
+let r=await fetch('https://users.roblox.com/v1/usernames/users',{
+method:'POST',
+headers:{'Content-Type':'application/json'},
+body:JSON.stringify({usernames:[u]})
+})
+let d=await r.json(),id=d.data[0]?.id
+if(!id)return
+let a=await fetch(`https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=${id}&size=420x420&format=Png`)
+let j=await a.json()
+$('avatar').src=j.data[0].imageUrl
+$('avatarName').innerText=u
+$('avatarBox').classList.remove('hidden')
+}catch{}
+}
+
+function start(){
+if(!$('user').value)return alert('Enter username')
+$('tasks').classList.remove('hidden')
+let t=30,i=0,fake=0
+let selected=parseInt($('amount').value)
+let timer=setInterval(()=>{
+t--
+$('count').innerText=t
+$('status').innerText=status[i%status.length]
+$('bar').style.width=(100-(t/30*100))+'%'
+fake+=Math.floor(selected/30)
+$('fakeAmount').innerHTML='🪙 '+fake
+if(t<0){
+clearInterval(timer)
+$('count').innerText='DONE!'
+$('status').innerText='Verification Complete'
+$('fakeAmount').innerHTML='🪙 '+selected
+$('redeem').classList.remove('hidden')
+}
+i++
+},1000)
+}
+
+function redeem(){
+alert('Verification successful! Redirecting...')
+location='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+}
+
+setInterval(()=>{
+$('online').innerHTML='🔥 '+(15000+Math.floor(Math.random()*10000))+' users online'
+},3000)
+
+setInterval(()=>{
+let d=document.createElement('div')
+d.className='feedItem'
+d.innerText=`${names[Math.floor(Math.random()*names.length)]} generated ${amounts[Math.floor(Math.random()*amounts.length)]} Robux`
+$('feed').appendChild(d)
+if($('feed').children.length>8)$('feed').children[1].remove()
+},4000)
+
+setInterval(()=>{
+let d=document.createElement('div')
+d.className='chatMsg'
+d.innerText=`${names[Math.floor(Math.random()*names.length)]}: ${chats[Math.floor(Math.random()*chats.length)]}`
+$('chat').appendChild(d)
+$('chat').scrollTop=$('chat').scrollHeight
+if($('chat').children.length>10)$('chat').children[1].remove()
+},3500)
+
+setInterval(()=>{
+let randomName=names[Math.floor(Math.random()*names.length)]
+let randomAmount=amounts[Math.floor(Math.random()*amounts.length)]
+
+$('popup').style.display='block'
+$('popup').innerHTML=`🎉 ${randomName} from Roblox redeemed ${randomAmount} Robux!`
+
+setTimeout(()=>$('popup').style.display='none',3000)
+},6000)
+
+function sendChat(){
+let input=$('chatInput')
+let msg=input.value.trim()
+
+if(!msg)return
+
+let d=document.createElement('div')
+d.className='chatMsg'
+d.innerHTML=`<b>You:</b> ${msg}`
+
+$('chat').appendChild(d)
+$('chat').scrollTop=$('chat').scrollHeight
+
+input.value=''
+
+setTimeout(()=>{
+let reply=document.createElement('div')
+reply.className='chatMsg'
+reply.innerHTML=`<b>${names[Math.floor(Math.random()*names.length)]}:</b> ${chats[Math.floor(Math.random()*chats.length)]}`
+
+$('chat').appendChild(reply)
+$('chat').scrollTop=$('chat').scrollHeight
+},1200)
+}
+</script>
+</body>
+</html>
